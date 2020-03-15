@@ -1,58 +1,16 @@
 
-#include<stdio.h>
-#include<string>
-#include<cstdio>
-#include<iostream>
-#include<stdlib.h>
-#include<cmath>
-#include<vector>
-#include<map>
-#include<algorithm>
-#define o long long int
+    import java.util.*
 
-using namespace std;
-
-int main()
-{
-
-
-       map<string,int> m;
-
-       int n;
-
-
-       cin>>n;
-       string s;
-
-       cin>>s;
-       int i;
-
-
-       for(i=0;i<n-1;i++)
-       {
-       m[s.substr(i,2)]++;
-
-       }
-
-       string r;
-
-       int c=0;
-
-        for(i=0;i<n-1;i++)
-        {
-
-
-            if(m[s.substr(i,2)]>c)
-            {
-
-                c=m[s.substr(i,2)];
-                r=s.substr(i,2);
-            }
+    fun main(args: Array<String>) {
+        val scanner = Scanner(System.`in`)
+        scanner.nextInt()
+        val str = scanner.next()
+        val da = IntArray(676)
+        var c = str[0]
+        for (i in 1 until str.length) {
+            da[(c - 'A') * 26 + (str[i] - 'A')]++
+            c = str[i]
         }
-
-//😎😎
-
-
-       cout<<r;
-   return 0;
-}
+        val a = da.indexOf(da.max()!!)
+        println("${'A' + a / 26}${('A' + a % 26)}")
+    }

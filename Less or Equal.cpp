@@ -1,72 +1,19 @@
 
-#include<stdio.h>
-#include<iostream>
-#include<string>
-#include<cstdio>
-#include<cmath>
-#include<algorithm>
-#include<string.h>
-#define o   long long int
+    import java.util.*
 
-using namespace std;
-
-
-int main()
-            {
-
-
-
-
-       int n,k;
-
-
-       cin>>n>>k;
-
-
-
-       int a[n]={0};
-
-
-
-       int i;
-
-
-       for(i=0;i<n;i++)
-       {
-
-
-
-           cin>>a[i];
-       }
-
-
-       sort(a,a+n);
-
-
-       if(k==0)
-       {
-
-           if(a[0]>1)
-           {
-
-               cout<<a[0]-1;
-           }
-           else
-           {
-               cout<<-1;
-
-           }
-       }
-
-    else if(a[k-1]==a[k])   {
-                          cout<<-1;
-       }
-       else
-       {
-
-           cout<<a[k-1];
-       }
-
-    return 0;
-
-}
+    fun main(args: Array<String>) {
+        val scanner = Scanner(System.`in`)
+        val np = scanner.nextInt()
+        val k = scanner.nextInt()
+        val arr = IntArray(np) { scanner.nextInt() }.sorted()
+        if (k == 0) {
+            if (arr[0] > 1)
+                print(1)
+            else
+                print(-1)
+        }
+        else if (k == np || arr[k - 1] != arr[k])
+            print(arr[k - 1])
+        else
+            print(-1)
+    }

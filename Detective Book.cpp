@@ -1,39 +1,44 @@
 
- #include<stdio.h>
-#include<string.h>
-#include<stdlib.h>
-#include<math.h>
- int main()
+#include<bits/stdc++.h>
+#define o long long int
+using namespace std ;
+int main()
 {
-     int n;
 
-     scanf("%d",&n);
 
-     int a[n];
 
-     int i;
-     int x=0,c=0;
 
-     for(i=0;i<n;i++)
-     {
+       int n;
 
-         scanf("%d",&a[i]);
 
-         if(a[i]>x)
-         {
+       cin>>n;
 
-             x=a[i];
-         }
 
-         if(x==i+1)
-         {
+       int a[n];
 
-             c++;
-         }
 
-     }
+       int i;
 
-     printf("%d",c);
+       for(i=0;i<n;i++){
 
-   return 0;
-}
+        cin>>a[i];
+
+       }
+
+       int  mind_creaker=0,max1=0;
+       for(i=0;i<n;i++ ){
+               max1=max(max1,a[i]);
+             if(i+1==max1){
+              mind_creaker++;
+             }
+
+       }
+
+
+  cout<< mind_creaker;
+
+  return 0;
+       }
+
+
+
